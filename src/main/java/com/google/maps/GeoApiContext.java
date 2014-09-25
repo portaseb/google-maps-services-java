@@ -46,6 +46,7 @@ public class GeoApiContext {
   private String host = DEFAULT_HOST;
   private String apiKey;
   private String clientId;
+  private String channel;
   private UrlSigner urlSigner;
   private OkHttpClient client = new OkHttpClient();
 
@@ -114,7 +115,7 @@ public class GeoApiContext {
       url.append("?key=").append(apiKey);
     }
     url.append(encodedPath);
-
+    if ( channel != null ) url.append("&channel=").append(channel);
     if (clientId != null) {
       try {
         String signature = urlSigner.getSignature(url.toString());
@@ -163,7 +164,13 @@ public class GeoApiContext {
     this.urlSigner = new UrlSigner(cryptographicSecret);
     return this;
   }
-
+  // Add the channel param (for the quota monitoring)
+  public GeoApiContext setEnterpriseCredentials(String clientId, String cryptographicSecret, String channel) {
+	    this.clientId = clientId;
+	    this.channel = channel;
+	    this.urlSigner = new UrlSigner(cryptographicSecret);
+	    return this;
+	}
   /**
    * Sets the default connect timeout for new connections. A value of 0 means no timeout.
    *
