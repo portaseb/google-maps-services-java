@@ -161,6 +161,11 @@ import com.google.maps.internal.StringJoin.UrlValue;
     POINT_OF_INTEREST("point_of_interest"),
 
     /**
+     * {@code UNIVERSITY} indicates that's a university
+     */
+    UNIVERSITY("university"),
+
+    /**
      * {@code FLOOR} indicates the floor of a building address.
      */
     FLOOR("floor"),
@@ -268,6 +273,8 @@ import com.google.maps.internal.StringJoin.UrlValue;
         return PARK;
       } else if (addressComponentType.equalsIgnoreCase(POINT_OF_INTEREST.toString())) {
         return POINT_OF_INTEREST;
+      } else if (addressComponentType.equalsIgnoreCase(UNIVERSITY.toString())) {
+          return UNIVERSITY;
       } else if (addressComponentType.equalsIgnoreCase(FLOOR.toString())) {
         return FLOOR;
       } else if (addressComponentType.equalsIgnoreCase(ESTABLISHMENT.toString())) {
