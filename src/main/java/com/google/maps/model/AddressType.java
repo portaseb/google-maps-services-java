@@ -154,6 +154,11 @@ import com.google.maps.internal.StringJoin.UrlValue;
     POINT_OF_INTEREST("point_of_interest"),
 
     /**
+     * {@code UNIVERSITY} indicates that's a university
+     */
+    UNIVERSITY("university"),
+    
+    /**
      * {@code ESTABLISHMENT} typically indicates a place that has not yet been categorized.
      */
     ESTABLISHMENT("establishment"),
@@ -227,6 +232,8 @@ import com.google.maps.internal.StringJoin.UrlValue;
         return PARK;
       } else if (addressType.equalsIgnoreCase(POINT_OF_INTEREST.toString())) {
         return POINT_OF_INTEREST;
+      }  else if (addressType.equalsIgnoreCase(UNIVERSITY.toString())) {
+        return UNIVERSITY;
       } else if (addressType.equalsIgnoreCase(ESTABLISHMENT.toString())) {
         return ESTABLISHMENT;
       } else if (addressType.equalsIgnoreCase(BUS_STATION.toString())) {
