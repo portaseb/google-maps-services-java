@@ -159,6 +159,21 @@ import com.google.maps.internal.StringJoin.UrlValue;
     UNIVERSITY("university"),
     
     /**
+     * {@code CITY_ALL} -
+     */
+    CITY_ALL("city_hall"),
+    
+    /**
+     * {@code LOCAL_GOVERNMENT_OFFICE} -
+     */
+    LOCAL_GOVERNMENT_OFFICE("local_government_office"),
+    
+    /**
+     * {@code HOSPITAL} -
+     */
+    HOSPITAL("hospital"),
+    
+    /**
      * {@code ESTABLISHMENT} typically indicates a place that has not yet been categorized.
      */
     ESTABLISHMENT("establishment"),
@@ -232,8 +247,14 @@ import com.google.maps.internal.StringJoin.UrlValue;
         return PARK;
       } else if (addressType.equalsIgnoreCase(POINT_OF_INTEREST.toString())) {
         return POINT_OF_INTEREST;
-      }  else if (addressType.equalsIgnoreCase(UNIVERSITY.toString())) {
+      } else if (addressType.equalsIgnoreCase(UNIVERSITY.toString())) {
         return UNIVERSITY;
+      } else if (addressType.equalsIgnoreCase(CITY_ALL.toString())) {
+        return CITY_ALL;
+      } else if (addressType.equalsIgnoreCase(LOCAL_GOVERNMENT_OFFICE.toString())) {
+        return LOCAL_GOVERNMENT_OFFICE;
+      } else if (addressType.equalsIgnoreCase(HOSPITAL.toString())) {
+        return HOSPITAL;
       } else if (addressType.equalsIgnoreCase(ESTABLISHMENT.toString())) {
         return ESTABLISHMENT;
       } else if (addressType.equalsIgnoreCase(BUS_STATION.toString())) {
