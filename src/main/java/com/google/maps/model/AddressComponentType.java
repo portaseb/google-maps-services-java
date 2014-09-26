@@ -131,6 +131,12 @@ import com.google.maps.internal.StringJoin.UrlValue;
      * country.
      */
     POSTAL_CODE("postal_code"),
+    
+    /**
+     * {@code POSTAL_CODE_PREFIX} indicates a postal code as used to address postal mail within the
+     * country.
+     */
+    POSTAL_CODE("postal_code_prefix"),
 
     /**
      * {@code NATURAL_FEATURE} indicates a prominent natural feature.
@@ -252,6 +258,8 @@ import com.google.maps.internal.StringJoin.UrlValue;
         return SUBPREMISE;
       } else if (addressComponentType.equalsIgnoreCase(POSTAL_CODE.toString())) {
         return POSTAL_CODE;
+      } else if (addressComponentType.equalsIgnoreCase(POSTAL_CODE_PREFIX.toString())) {
+        return POSTAL_CODE_PREFIX;
       } else if (addressComponentType.equalsIgnoreCase(NATURAL_FEATURE.toString())) {
         return NATURAL_FEATURE;
       } else if (addressComponentType.equalsIgnoreCase(AIRPORT.toString())) {
